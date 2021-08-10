@@ -10,11 +10,11 @@
 #include <stdarg.h>
 
 // BrorFunc 入口函数类型
-typedef void (*BrorStart)(void);
+typedef void (*BrorFunc)(void* param);
 
 // 用户模块必须实现的函数
 // BrorThreadCreate 创建线程
-bool BrorThreadCreate(BrorStart start);
+bool BrorThreadCreate(BrorFunc func);
 // BrorDelay 延时
 void BrorDelay(int second);
 // BrorDelayMS 毫秒级延时
