@@ -22,10 +22,10 @@ void BrorDelayMS(int ms);
 // BrorYield 暂停执行让出CPU
 void BrorYield(void);
 // BrorMutexInit 初始化锁
-void BrorMutexInit(void);
+intptr_t BrorMutexInit(void);
 // BrorMutexLock 上锁
-void BrorMutexLock(void);
+void BrorMutexLock(intptr_t lock);
 // BrorMutexUnlock 解锁
-void BrorMutexUnlock(void);
+void BrorMutexUnlock(intptr_t lock);
 
 #endif
