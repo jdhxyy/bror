@@ -9,12 +9,28 @@
 #include <stdbool.h>
 #include <stdarg.h>
 
+// 线程优先级
+typedef enum {
+    BROR_THREAD_PRIORITY_HIGHEST = 0,
+    BROR_THREAD_PRIORITY_HIGH,
+    BROR_THREAD_PRIORITY_MIDDLE,
+    BROR_THREAD_PRIORITY_LOW,
+    BROR_THREAD_PRIORITY_LOWEST
+} BrorThreadPriority;
+
 // BrorFunc 入口函数类型
 typedef void (*BrorFunc)(void* param);
 
 // 用户模块必须实现的函数
 // BrorThreadCreate 创建线程
-bool BrorThreadCreate(BrorFunc func);
+// func:线程函数
+// name:线程名
+// priority:线程优先级
+// stackSize:堆栈大小
+bool BrorThreadCreate(BrorFunc func, const char* name, BrorThreadPriority priority, int stackSize);
+// BrorThreadDeleteMe 删除本线程
+// 注意:本函数需要在线程结束处调用
+void BrorThreadDeleteMe(void);
 // BrorDelay 延时
 void BrorDelay(int second);
 // BrorDelayMS 毫秒级延时
