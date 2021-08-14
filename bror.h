@@ -55,7 +55,7 @@ int BrorGetTickRate(void);
 void BrorDelay(int second);
 
 // BrorGetTickMs 获取当前滴答对应的毫秒
-void BrorGetTickMs(void);
+uint32_t BrorGetTickMs(void);
 
 // BrorGetTickToMs 滴答转换位毫秒
 uint32_t BrorTickToMs(uint32_t tick);

@@ -10,7 +10,7 @@ void BrorDelay(int second) {
 }
 
 // BrorGetTickMs 获取当前滴答对应的毫秒
-void BrorGetTickMs(void) {
+uint32_t BrorGetTickMs(void) {
     return BrorGetTick() * 1000 / BrorGetTickRate();
 }
 
